@@ -1,0 +1,82 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: linear-gradient(160deg, #17122b 0%, #241b45 55%, #12303a 100%);
+  color: #fff7e6;
+  min-height: 100vh;
+  padding: 14px 18px 18px;
+}
+#hud { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+#brand { display: flex; align-items: center; gap: 12px; }
+#logo {
+  font-size: 34px; color: #ffd75e; background: #2e2458;
+  border: 3px solid #ffd75e; border-radius: 50%; width: 62px; height: 62px;
+  display: grid; place-items: center; letter-spacing: -6px; padding-right: 6px;
+}
+#game-title { margin: 0; font-size: 34px; letter-spacing: .5px; color: #ffd75e; }
+#game-subtitle { margin: 2px 0 0; font-size: 16px; color: #d9d2ff; }
+#stats { display: flex; gap: 10px; flex-wrap: wrap; }
+.stat {
+  background: #fff7e6; color: #241b45; border-radius: 12px; padding: 7px 14px;
+  text-align: center; min-width: 92px; box-shadow: 0 4px 0 #0c0a1c;
+}
+.stat-label { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: #6b5ca5; }
+.stat strong { font-size: 26px; line-height: 1.1; }
+.stat-remaining { background: #ffd75e; border: 3px solid #fff; }
+.stat-remaining strong { font-size: 32px; }
+#scene-tabs { display: flex; gap: 10px; margin: 14px 0 10px; flex-wrap: wrap; }
+.scene-tab {
+  font: inherit; font-size: 17px; cursor: pointer; border-radius: 999px;
+  border: 3px solid #8f83d9; background: #2e2458; color: #fff7e6; padding: 8px 18px;
+}
+.scene-tab.active { background: #ffd75e; color: #241b45; border-color: #fff; font-weight: bold; }
+.scene-tab .tab-meta { font-size: 13px; opacity: .85; }
+#stage { display: flex; gap: 12px; align-items: flex-start; justify-content: center; }
+.panel-wrap { margin: 0; flex: 1 1 0; max-width: 600px; }
+.panel-wrap figcaption {
+  display: flex; gap: 10px; align-items: center; font-size: 18px; margin-bottom: 6px;
+}
+.panel-tag { background: #3fbf72; color: #fff; border-radius: 999px; padding: 3px 12px; font-size: 14px; font-weight: bold; }
+.tag-alt { background: #ff7a59; }
+.canvas-holder { border: 5px solid #ffd75e; border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 8px 24px rgba(0,0,0,.45); }
+canvas { display: block; width: 100%; height: auto; cursor: crosshair; }
+canvas:focus { outline: 4px solid #7ee2ff; outline-offset: -4px; }
+#versus {
+  align-self: center; font-size: 22px; font-weight: bold; color: #241b45;
+  background: #ffd75e; border: 3px solid #fff; border-radius: 50%;
+  width: 52px; height: 52px; display: grid; place-items: center; flex: 0 0 auto;
+}
+#controls { text-align: center; margin-top: 12px; }
+#progress-dots { display: flex; gap: 8px; justify-content: center; margin-bottom: 6px; }
+.dot { width: 26px; height: 26px; border-radius: 50%; border: 3px solid #fff; background: #4a3f7a; color: transparent; font-size: 15px; line-height: 20px; }
+.dot.found { background: #3fbf72; color: #fff; }
+#message { font-size: 20px; margin: 4px 0 10px; min-height: 26px; color: #ffe9a8; }
+#message.good { color: #8dffb0; }
+#message.bad { color: #ff9d8a; }
+#buttons { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+#buttons button, #win-card button {
+  font: inherit; font-size: 17px; cursor: pointer; border-radius: 999px;
+  border: 3px solid #fff; background: #ff7a59; color: #fff; padding: 9px 20px; font-weight: bold;
+}
+#buttons button:hover, #win-card button:hover { background: #ff5c39; }
+#hint-button { background: #3fbf72; }
+#hint-button:hover { background: #2da85e; }
+#keys-help { color: #bdb2f2; font-size: 14px; margin: 10px 0 0; }
+#win-overlay, #pause-overlay {
+  position: fixed; inset: 0; background: rgba(12,10,28,.72);
+  display: grid; place-items: center; z-index: 10;
+}
+#win-overlay[hidden], #pause-overlay[hidden] { display: none; }
+#win-card {
+  background: #fff7e6; color: #241b45; border: 5px solid #ffd75e; border-radius: 20px;
+  padding: 28px 36px; text-align: center; max-width: 520px;
+}
+#win-title { margin: 0; font-size: 36px; }
+#win-stars { font-size: 44px; color: #ffb400; margin: 8px 0; letter-spacing: 6px; }
+#win-detail { font-size: 19px; }
+#win-card button { margin: 6px 4px 0; }
+#pause-overlay p { font-size: 34px; color: #ffd75e; }
+#status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.shake { animation: shake .3s; }
+@keyframes shake { 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
